@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.vakasai.whoslying">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WhosLying"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainMenu"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".setup.Setup"
+            android:label=""
+            android:parentActivityName=".MainMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vakasai.whoslying.setup.Setup" />
+        </activity>
+        <activity
+            android:name=".rolelist.RolelistLib"
+            android:label=""
+            android:parentActivityName=".MainMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vakasai.whoslying.rolelist.RolelistLib" />
+        </activity>
+        <activity
+            android:name=".roles.RoleLib"
+            android:label=""
+            android:parentActivityName=".MainMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vakasai.whoslying.roles.RoleLib" />
+        </activity>
+        <activity
+            android:name=".setup.Settings"
+            android:label=""
+            android:parentActivityName=".setup.Setup">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vakasai.whoslying.setup.Settings" />
+        </activity>
+        <activity
+            android:name=".roles.AddRole"
+            android:label=""
+            android:parentActivityName=".roles.RoleLib">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vakasai.whoslying.roles.AddRole" />
+        </activity>
+        <activity
+            android:name=".AddRolelist"
+            android:label=""
+            android:parentActivityName=".rolelist.RolelistLib">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.vakasai.whoslying.AddRolelist" />
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+</manifest>
