@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.vakasai.whoslying">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -18,6 +17,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -62,16 +62,16 @@
                 android:value="com.vakasai.whoslying.roles.AddRole" />
         </activity>
         <activity
-            android:name=".AddRolelist"
+            android:name=".game.Game"
             android:label=""
-            android:parentActivityName=".rolelist.RolelistLib">
+            android:parentActivityName=".game.Game">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.vakasai.whoslying.AddRolelist" />
+                android:value="com.vakasai.whoslying.game.Game" />
         </activity>
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

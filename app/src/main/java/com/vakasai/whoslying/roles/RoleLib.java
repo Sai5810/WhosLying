@@ -43,15 +43,15 @@ public class RoleLib extends AppCompatActivity {
     }
 
     public void initDefaults() {
-//        TextView tv = new TextView(this);
-//        tv.setTextColor(ContextCompat.getColor(this, R.color.white));
-//        tv.setText(R.string.innocent);
-//        tv.setTag(innocent);
-//        roleViews.add(tv);
-//        TextView tv2 = new TextView(this);
-//        tv2.setTextColor(ContextCompat.getColor(this, R.color.white));
-//        tv2.setText(R.string.mafioso);
-//        tv2.setTag(mafioso);
-//        roleViews.add(tv2);
+        TextView tv = new TextView(this);
+        tv.setTextColor(ContextCompat.getColor(this, R.color.white));
+        tv.setText(R.string.innocent);
+        tv.setTag("innocent");
+        roleViews.add(tv);
+        TextView tv2 = new TextView(this);
+        tv2.setTextColor(ContextCompat.getColor(this, R.color.white));
+        tv2.setText(R.string.mafioso);
+        tv2.setTag("mafioso");
+        roleViews.add(tv2);
     }
 }

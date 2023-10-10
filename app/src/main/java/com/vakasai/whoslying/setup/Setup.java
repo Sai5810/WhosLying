@@ -1,6 +1,7 @@
 package com.vakasai.whoslying.setup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,9 +12,18 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.vakasai.whoslying.MainMenu;
 import com.vakasai.whoslying.R;
+import com.vakasai.whoslying.game.Game;
+import com.vakasai.whoslying.rolelist.Rolelist;
+import com.vakasai.whoslying.roles.Role;
+import com.vakasai.whoslying.roles.RoleLib;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Setup extends AppCompatActivity {
     ArrayList<TextView> names = new ArrayList<>();
@@ -54,7 +64,23 @@ public class Setup extends AppCompatActivity {
         }
     }
 
-//    public void startGame() {
-//
-//    }
+    public void startGame(View view) {
+        SharedPreferences pref;
+        pref = getSharedPreferences("SharedPref", MODE_PRIVATE);
+        String rolelistJSON = pref.getString("selectedRolelist", "");
+        Gson gson = new Gson();
+        Rolelist selectedRolelist = gson.fromJson(rolelistJSON, Rolelist.class);
+        if (names.size() == selectedRolelist.size()) {
+
+            Intent intent = new Intent(this, Game.class);
+
+            intent.putExtra("selectedRolelist", rolelistJSON);
+            ArrayList<String> name_strings = new ArrayList<>();
+            for(TextView i: names) {
+                name_strings.add(i.getText().toString());
+            }
+            intent.putExtra("names", name_strings);
+            Setup.this.startActivity(intent);
+        }
+    }
 }

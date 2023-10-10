@@ -49,11 +49,12 @@ public class RolelistLib extends AppCompatActivity {
 
     public void initDefaults() {
         Rolelist classicMafia = new Rolelist();
-        Gson gson = new Gson();
         String json = pref.getString("roles", "");
-        Type type = new TypeToken<HashMap<String, Role>>(){}.getType();
+        Type type = new TypeToken<HashMap<String, Role>>() {
+        }.getType();
+        Gson gson = new Gson();
         HashMap<String, Role> roles = gson.fromJson(json, type);
-        for(int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 2; ++i) {
             classicMafia.add(roles.get("Innocent"));
         }
         classicMafia.add(roles.get("Mafioso"));

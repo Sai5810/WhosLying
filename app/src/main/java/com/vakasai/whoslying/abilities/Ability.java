@@ -6,4 +6,6 @@ public class Ability {
     public Ability(int uses) {
         this.uses = uses;
     }
+
+
 }
